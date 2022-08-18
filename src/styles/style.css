@@ -1,0 +1,208 @@
+@import url("https://fonts.googleapis.com/css2?family=Imperial+Script&family=Poppins&display=swap");
+
+@import url("./global.css");
+
+.header {
+  background: linear-gradient(#ffffff, #ecb22e);
+}
+.container {
+  /* background-color: linear gradient (#ECB22E, #FFFFFF); */
+  width: 100%;
+  max-width: 1250px;
+  margin: 0 auto;
+}
+.name {
+  font-family: Imperial Script;
+  margin-right: 242px;
+  font-size: 32px;
+  text-decoration: none;
+}
+ul,
+li {
+  display: block;
+}
+.nav {
+  padding: 20px;
+  align-items: center;
+  display: flex;
+}
+.menu {
+  justify-content: center;
+  display: flex;
+}
+.menu li a {
+  text-decoration: none;
+}
+a:hover {
+  text-decoration: underline;
+}
+
+.menu li {
+  margin-right: 13px;
+  text-transform: uppercase;
+}
+
+.btn_nav {
+  margin-left: auto;
+  text-decoration: none;
+
+  color: azure;
+  background-color: #fcc028;
+  padding: 10px 30px;
+  border-radius: 5px;
+}
+
+.start {
+  font-size: 18px;
+  color: #ecb22e;
+  padding-top: 143px;
+}
+h1 {
+  font-size: 72.72px;
+}
+h2 {
+  margin: 7px 0;
+  font-size: 24px;
+  color: green;
+}
+
+.text {
+  flex-direction: column;
+  align-items: flex-start;
+  width: 609px;
+}
+.about {
+  display: flex;
+}
+
+.btn_about {
+  text-decoration: none;
+
+  color: azure;
+  background-color: #fcc028;
+  padding: 10px 30px;
+  border-radius: 5px;
+  gap: 10px;
+}
+.buttons {
+  padding-top: 46px;
+  display: flex;
+  align-items: center;
+}
+
+.download {
+  padding: 0 22px;
+}
+.fullrost {
+  padding: 0 100px;
+}
+.advantage {
+  padding: 30px 0;
+  display: flex;
+}
+.yellow {
+  color: #ecb22e;
+}
+.strochka2 {
+  display: flex;
+}
+.medal {
+  padding: 30px 0;
+}
+.podpis {
+  padding: 2px 10px;
+}
+.huita {
+  padding-left: 60px;
+}
+.bloks {
+  display: flex;
+  justify-content: center;
+}
+.colomn {
+  margin: 19.47px;
+  /* flex: 33%; */
+}
+.colomn__title {
+  font-weight: 600;
+  font-size: 19.47px;
+  text-align: center;
+}
+.colomn__text {
+  font-size: 14.6px;
+  text-align: center;
+  width: 359px;
+}
+.nameBlock3 {
+  padding-top: 80px;
+  text-align: center;
+  color: #ecb22e;
+  text-transform: uppercase;
+}
+.checkMY {
+  margin-bottom: 30px;
+  font-size: 32px;
+  text-align: center;
+}
+.exploreBtn {
+  cursor: pointer;
+  margin-right: 60px;
+  color: #ecb22e;
+  text-align: end;
+  font-weight: 600;
+}
+.fullBlock {
+  margin: 35px 0px;
+  display: flex;
+  align-items: center;
+}
+.halfBlock {
+  margin-left: 40px;
+}
+.halfBlock__number {
+  color: #ecb22e;
+  font-size: 31.16px;
+}
+.halfBlock__title {
+  margin: 15px 0px;
+  font-weight: 600;
+  font-size: 23.37px;
+}
+.halfBlock__text {
+  font-size: 17.52px;
+}
+.halfBlock__btn {
+  margin: 30px 0px;
+}
+.halfBlock__btn_button {
+  color: #ecb22e;
+  padding: 10px 29.2083px;
+  gap: 10px;
+  border: 1px solid #fcc028;
+  border-radius: 9.73611px;
+  cursor: pointer;
+}
+.btnAfterFullBlock {
+  padding-top: 50px;
+  text-align: center;
+}
+.btnAfterFullBlock_hireMe {
+  color: azure;
+  padding: 9.73611px 29.2083px;
+  gap: 9.74px;
+  border-style: none;
+  background: #fcc028;
+  border-radius: 4.86806px;
+  cursor: pointer;
+  width: 152.86px;
+}
+.partfolioImages {
+  margin: 10px 40px;
+}
+.logo {
+  display: flex;
+}
+.sponsorLogo {
+  display: block;
+  margin: auto;
+}
