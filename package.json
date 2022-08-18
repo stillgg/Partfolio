@@ -2,7 +2,7 @@
   "name": "partfolio",
   "main": "index.js",
   "scripts": {
-    "start": "node server",
+    "start": "npx webpack serve --mode=development",
     "build": "webpack --mode=production"
   },
   "repository": {
@@ -16,10 +16,10 @@
   },
   "homepage": "https://github.com/makcik303123/Partfolio#readme",
   "devDependencies": {
+    "babel-loader": "^8.2.5",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^11.0.0",
     "css-loader": "^6.7.1",
-    "express": "^4.18.1",
     "html-webpack-plugin": "^5.5.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.74.0",
@@ -29,7 +29,6 @@
     "webpack-hot-middleware": "^2.25.2"
   },
   "dependencies": {
-    "babel-loader": "^8.2.5",
-    "portfinder-sync": "^0.0.2"
+    "chokidar": "^3.5.3"
   }
 }

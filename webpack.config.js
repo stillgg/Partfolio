@@ -7,12 +7,15 @@ const { CleanWebpackPlugin } = require("clean-webpack-plugin");
 const config = {
   entry: "./src/index.js",
   output: {
-    clean: true,
     path: path.resolve(__dirname, "dist"),
     filename: "[name].[contenthash].bundle.js",
     publicPath: "/",
+    clean: true,
   },
-  devServer: { static: "./dist" },
+  devServer: {
+    hot: true,
+    watchFiles: ["src/**/*"],
+  },
   plugins: [],
   module: {
     rules: [],
@@ -20,6 +23,19 @@ const config = {
 };
 
 module.exports = (env, argv) => {
+  const pages = [
+    {
+      template: `./src/index.html`,
+      filename: `index.html`,
+      chunks: ["main"],
+    },
+    {
+      template: `./src/pages/somePage.html`,
+      filename: `somePage.html`,
+      chunks: ["main"],
+    },
+  ];
+
   const mode = argv.mode;
   const module = config.module;
   const rules = module.rules;
@@ -28,40 +44,36 @@ module.exports = (env, argv) => {
   config.mode = mode;
 
   if (mode === "development") {
-    plugins.push(
-      new HtmlWebpackPlugin({
-        template: `./src/index.html`,
-        filename: `index.html`,
-        minify: false,
-        inject: "body",
-        cache: true,
-        hash: true,
-        base: "/",
-      })
-    );
+    pages.forEach((page) => {
+      plugins.push(
+        new HtmlWebpackPlugin({
+          ...page,
+          chunks: page.chunks,
+          minify: false,
+          inject: "body",
+        })
+      );
+    });
   } else {
-    plugins.push(
-      new HtmlWebpackPlugin({
-        template: `./src/index.html`,
-        filename: `index.html`,
-        minify: true,
-        inject: "body",
-        cache: true,
-        hash: true,
-        base: "/",
-      })
-    );
+    pages.forEach((page) => {
+      plugins.push(
+        new HtmlWebpackPlugin({
+          ...page,
+          chunks: page.chunks,
+          minify: true,
+          inject: "body",
+          cache: true,
+          hash: true,
+          base: "/",
+        })
+      );
+    });
   }
 
   plugins.push(
     new CopyPlugin({
       patterns: [{ from: "src/resources", to: "resources" }],
     })
-  );
-
-  plugins.push(
-    new webpack.HotModuleReplacementPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
   );
 
   if (mode === "production") {
